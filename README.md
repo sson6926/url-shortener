@@ -15,3 +15,4 @@ MONGODB_DATABASE=url_shortener
 ```
 
 B3: ```uvicorn app.main:app --reload```
+
