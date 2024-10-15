@@ -25,16 +25,14 @@ async def shorten_url(url_data: URL):
     if existing_url:
         raise HTTPException(status_code=400, detail="ID nay da duoc su dung")
 
-    short_url = f"http://localhost:8000/{short_id}"
 
     new_url = {
         "original_url": original_url_str,
-        "short_url": short_url,
         "short_id": short_id
     }
     collection.insert_one(new_url)
 
-    return {"short_url": short_url}
+    return {"short_id": short_id}
 
 
 @router.get("/{short_id}")
